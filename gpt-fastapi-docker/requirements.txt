@@ -1,0 +1,5 @@
+fastapi==0.110.2
+uvicorn==0.29.0
+transformers==4.40.1
+--find-links https://download.pytorch.org/whl/cpu
+torch==1.13.1

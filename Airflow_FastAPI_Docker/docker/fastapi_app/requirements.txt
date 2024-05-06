@@ -1,0 +1,10 @@
+# For FastAPI app
+fastapi
+uvicorn
+
+# For Airflow DAGs (if any additional dependencies are needed)
+scikit-learn
+pandas
+
+# For interacting with Apache Airflow programmatically (optional)
+apache-airflow

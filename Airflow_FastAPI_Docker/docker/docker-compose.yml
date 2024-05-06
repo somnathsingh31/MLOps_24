@@ -1,0 +1,15 @@
+services:
+  airflow:
+    image: apache/airflow:latest
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=sqlite:////root/airflow/airflow.db
+      - AIRFLOW__CORE__DAGS_FOLDER=/root/airflow/dags
+    volumes:
+      - ./airflow_dag:/root/airflow/dags
+      - ./airflow_dag/data:/airflow/data  # Mount data directory
+      - ./airflow_dag/models:/airflow/models  # Mount models directory
+      - ./logs:/root/airflow/logs
+    ports:
+      - "8080:8080"
